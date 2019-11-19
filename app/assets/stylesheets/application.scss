@@ -12,3 +12,52 @@
  *
  */
  @import "bootstrap";
+ @import "podcasts";
+ $black: #000000;
+ $white: #FFFFFF;
+ $highlight: #D2674E;
+ $light: #EDEFF5;
+ /* Show it is fixed to the top */
+ body {
+   min-height: 75rem;
+   padding-top: 3.5rem;
+ }
+
+ .navbar-brand {
+   color: $highlight !important;
+   &:hover {
+     color: lighten($highlight, 30%) !important;
+   }
+ }
+ .bg-dark {
+   background-color: #050505 !important;
+ }
+
+ .btn {
+   color: $white;
+   padding: 0.55rem 1rem;
+   border-radius: 1.5rem;
+   min-width: 6.5rem;
+ }
+
+ .btn_highlight {
+   background: $highlight;
+   transition: background .4s ease-in-out;
+   &:hover {
+     background: darken($highlight, 7.5%);
+   }
+ }
+
+ .btn_dark {
+   background: $black;
+   color: $highlight;
+   transition: background .4s ease-in-out;
+   &:hover {
+     color: darken($highlight, 7.5%);
+     background: lighten($black, 15%);
+   }
+ }
+
+ .field {
+   margin: .5rem 0 1.5rem 0;
+ }

@@ -1,0 +1,40 @@
+<section class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <p id="notice"><%= notice %></p>
+
+      <h1>Podcasts</h1>
+    </div><!-- .col-md-12 -->
+  </div><!-- .row -->
+
+
+  <div class="row">
+    <% @podcasts.each do |podcast| %>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-topper">
+          <% if podcast.banner.present? %>
+            <%= image_tag podcast.banner.url(:thumb) %>
+          <% else %>
+          No Image
+          <% end %>
+        </div>
+        <div class="card-block">
+          <h4 class="card-title">
+            <%= podcast.description %>
+          </h4>
+            <p>
+              <%= link_to 'Show', podcast, class: 'title-text' %>
+              <%= link_to 'Edit', edit_podcast_path(podcast), class: 'paragraph_text' %>
+              <%= link_to 'Destroy', podcast, method: :delete, data: { confirm: 'Are you sure?' }, class: 'paragraph_text' %>
+            </p>
+          </div>
+        </div><!-- card -->
+      </div><!-- .col-md-4 -->
+    <% end %>
+  </div><!-- .row -->
+  
+<br>
+
+<%= link_to 'New Podcast', new_podcast_path %>
+</section>

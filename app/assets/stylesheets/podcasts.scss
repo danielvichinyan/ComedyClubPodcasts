@@ -1,0 +1,29 @@
+// Place all the styles related to the Podcasts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$highlight: #D2674E;
+.card {
+  -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.30);
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.30);
+  margin: 0 1% 2rem 1%;
+  border-radius: .65rem;
+  text-align: center;
+  .card-topper {
+    background-color: #050505;
+    min-height: 150px;
+    img {
+    width: 100%;
+    max-width: 100%;
+    border-radius: .65rem;
+    }
+  }
+  .card-title {
+    padding-top: 1rem;
+    .title-text {
+      color: $highlight;
+    }
+  }
+  .paragraph_text {
+    color: #000000;
+  }
+}
