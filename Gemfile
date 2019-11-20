@@ -41,6 +41,7 @@ gem 'sprockets-rails', '~> 3.2', '>= 3.2.1', :require => 'sprockets/railtie'
 gem 'paperclip', '~> 6.1'
 gem 'paperclip-av-transcoder', '~> 0.6.4'
 gem 'aws-sdk-s3', '~> 1.56'
+gem 'devise', '~> 4.7', '>= 4.7.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

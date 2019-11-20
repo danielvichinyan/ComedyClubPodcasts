@@ -1,17 +1,17 @@
 <section class="container">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12" style="margin-top:5rem">
       <p id="notice"><%= notice %></p>
 
       <p>
         <strong>Title:</strong>
         <%= @podcast.title %>
       </p>
-
+    </div>
 
       <p>
         <% if @podcast.banner.present? %>
-          <%= image_tag (@podcast.banner.url(:medium)) %>
+          <%= image_tag (@podcast.banner.url(:medium)), class:"episode_thumbnail" %>
         <% else %>
         <% end %>
       </p>
@@ -21,6 +21,8 @@
         <%= @podcast.description %>
       </p>
 
+
       <%= link_to 'Edit', edit_podcast_path(@podcast) %> |
       <%= link_to 'Back', podcasts_path %>
+
 </section>
