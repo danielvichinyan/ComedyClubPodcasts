@@ -1,6 +1,10 @@
-<h1>Editing Podcast</h1>
+<section class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Editing Podcast</h1>
+    </div>
+      <%= render 'form', podcast: @podcast %>
 
-<%= render 'form', podcast: @podcast %>
-
-<%= link_to 'Show', @podcast %> |
-<%= link_to 'Back', podcasts_path %>
+      <%= link_to 'Show', @podcast %> |
+      <%= link_to 'Back', podcasts_path %>
+</section>

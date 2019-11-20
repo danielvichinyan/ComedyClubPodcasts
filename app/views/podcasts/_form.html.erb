@@ -11,22 +11,34 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+  <div class="row">
+    <div class="col-md-12">
+
+      <div class="field">
+        <%= form.label :title %><br>
+        <%= form.text_field :title, style: "width:100%" %>
+      </div>
+
+      <div class="field">
+        <%= form.label :description %><br>
+        <%= form.text_area :description, style: "width:100%" %>
+      </div>
+
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :banner %>
-    <%= form.file_field :banner %>
+  <div class="row" style="margin-top:1rem">
+    <div class="col-md-4">
+          <div class="field">
+            <%= form.label :banner %>
+            <%= form.file_field :banner %>
+          </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+  <div class="row">
+    <div class="col-md-12" style="margin-top:1rem">
+      <%= form.submit 'Create Podcast', class:"btn btn_dark" %>
+    </div>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+  <% end %>
