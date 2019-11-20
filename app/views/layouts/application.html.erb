@@ -14,11 +14,29 @@
       <%= render 'shared/navigation' %>
     </header>
 
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <% if alert %>
+        <div id="notice_wrapper">
+            <p class="alert"><%= alert %></p>
+          </div>
+      <% elsif notice %>
+        <div id="notice_wrapper">
+            <p class="notice"><%= notice %></p>
+        </div>
+      <% end %>
 
 
     <%= yield %>
+
+    <script>
+      $(document).ready(function(){
+        setTimeout(function() {
+          $('#notice_wrapper').fadeOut("slow", function() {
+            $this.remove();
+          });
+        }, 6500 );
+      });
+    </script>
+
 
     <footer>
       <%= render 'shared/footer' %>
