@@ -28,3 +28,9 @@
   border:#030303;
   background-color: #050505;
 }
+
+.image {
+  &:hover {
+    opacity: 0.8;
+  }
+}
