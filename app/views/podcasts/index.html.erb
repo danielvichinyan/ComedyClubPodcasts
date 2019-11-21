@@ -1,35 +1,27 @@
-<section class="container">
-  <div class="row">
-    <div class="col-md-12" style="margin-top:5rem">
-      <div class="btn_holder">
-        <h2>Podcasts</h2><br><br>
-      </div>
-    </div><!-- .col-md-12 -->
-  </div><!-- .row -->
+<div class="btn_holder" style="margin-top:5rem">
+  <h2>Podcasts</h2><br><br>
+</div>
 
-  <div class="row">
-    <% @podcasts.each do |podcast| %>
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-topper">
-            <% if podcast.banner.present? %>
-              <%= image_tag podcast.banner.url(:thumb) %>
-            <% else %>
-              <%= image_tag "noimage.jpg" %>
-            <% end %>
+<div id="podcasts-show" class="cf">
+  <div class="wrapper">
+    <ul class="cf">
+      <% @podcasts.each do |podcast| %>
+        <li>
+          <% if podcast.banner.present? %>
+            <%= image_tag podcast.banner.url(:thumb) %>
+          <% else %>
+            <%= image_tag "noimage.jpg" %>
+          <% end %>
+          <div class="overview">
+            <h2><%= link_to podcast.title, podcast, class: 'title-text' %></h2>
           </div>
-          <div class="card-block">
-            <h4 class="card-title"><br><br><br>
-              <%= link_to podcast.title, podcast, class: 'title-text' %>
-            </h4>
-          </div>
-        </div><!-- card -->
-      </div><!-- .col-md-4 -->
-    <% end %>
-  </div><!-- .row -->
-  <div class="main-pag">
-    <div class="fixer-pag">
-    <%= will_paginate @podcasts %>
-    </div>
+        </li>
+      <% end %>
+    </ul>
   </div>
-</section>
+</div><!-- .row -->
+<div class="main-pag">
+  <div class="fixer-pag">
+    <%= will_paginate @podcasts %>
+  </div>
+</div>

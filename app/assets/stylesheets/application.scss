@@ -154,3 +154,17 @@ h6 {
   position: relative;
   left: -50%;
 }
+
+.wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.cf:before, .cf:after {
+  content: " ";
+  display: table;
+}
+
+.cf:after {
+  clear: both;
+}
