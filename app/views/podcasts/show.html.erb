@@ -3,26 +3,50 @@
     <div class="col-md-12" style="margin-top:5rem">
       <p id="notice"><%= notice %></p>
 
-      <p>
-        <strong>Title:</strong>
-        <%= @podcast.title %>
-      </p>
-    </div>
+      <div class="btn_holder"><br>
+        <p>
+          <!-- If an episode is created with an image, display it -->
+          <% if @podcast.banner.present? %>
+            <%= image_tag (@podcast.banner.url(:medium)), class:"episode_thumbnail" %>
+          <% else %>
+          <!-- Else, display the NoImage image.-->
+            <%= image_tag "noimage.jpg", class: "episode_thumbnail" %>
+          <% end %>
+        </p>
+      </div>
 
-      <p>
-        <% if @podcast.banner.present? %>
-          <%= image_tag (@podcast.banner.url(:medium)), class:"episode_thumbnail" %>
-        <% else %>
-        <% end %>
-      </p>
+      <div class="btn_holder">
+        <p>
+          <strong><%= @podcast.title %></strong>
+        </p>
+      </div>
 
-      <p>
-        <strong>Description:</strong>
-        <%= @podcast.description %>
-      </p>
+      <div class="btn_holder"><br>
+        <p>
+          <%= @podcast.description %>
+        </p>
+      </div>
 
+      <div class="btn_holder"><br>
+        <p>
+          <!-- If a podcast is created with a mp3, display it -->
+          <% if @podcast.audio.present? %>
+            <%= audio_tag(@podcast.audio.url, controls: true, style: "width:70%") %>
+          <% end %>
+        </p>
+      </div>
 
-      <%= link_to 'Edit', edit_podcast_path(@podcast) %> |
-      <%= link_to 'Back', podcasts_path %>
+      <div class="btn_holder"><br>
+        <p>
+          <!-- If a podcast is created with a video, display it -->
+          <% if @podcast.video.present? %>
+            <%= video_tag(@podcast.video.url, controls: true, type: "video/mp4", style: "width:70%") %>
+          <% end %>
+        </p>
+      </div>
 
+      <div class="btn_holder"><br>
+        <%= link_to 'Edit', edit_podcast_path(@podcast) %> |
+        <%= link_to 'Back', podcasts_path %>
+      </div>
 </section>
