@@ -11,6 +11,10 @@
         </li>
       <% else %>
         <li class="nav-item">
+          <%= link_to 'Podcasts', root_path, class:'nav-link' %>
+        </li>
+
+        <li class="nav-item">
           <%= link_to 'Create a podcast', new_podcast_path, class:'nav-link' %>
         </li>
       <% end %>

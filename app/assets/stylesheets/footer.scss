@@ -11,26 +11,36 @@
   border-bottom: 1px solid transparent;
   -webkit-transition-border: border 0.2s ease;
   transition: border 0.2s ease;
-  color:#aaaaaa;
+  color: #aaaaaa;
 }
 
 .footer a:hover {
   text-decoration: none;
-  border-bottom-color: #00eeff;
+  color: $highlight !important;
+  border-bottom: 0.5px solid $highlight;
 }
 
 .border_bottom {
-  border-bottom: 0px dashed #444444;
+  border-bottom: 0 dashed #444444;
   margin-bottom: 1rem;
 }
 
 .btn-outline-info {
-  border:#030303;
+  border: #030303;
   background-color: #050505;
 }
 
 .image {
   &:hover {
     opacity: 0.8;
+  }
+}
+
+.form-border {
+  border: 1px solid $highlight !important;
+}
+@media (max-width: 990px) {
+  .floatr {
+    float: left !important;
   }
 }
