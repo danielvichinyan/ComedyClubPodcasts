@@ -5,7 +5,7 @@ class PodcastsController < ApplicationController
   # GET /podcasts.json
   def index
     # Order in ascending order
-    @podcasts = Podcast.all.order("created_at DESC")
+    @podcasts = Podcast.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 6)
   end
 
   # GET /podcasts/1
@@ -15,7 +15,7 @@ class PodcastsController < ApplicationController
 
   def search
     if params[:search].blank?
-      @podcasts = Podcast.all.order("created_at DESC")
+      @podcasts = Podcast.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 6)
     else
       @podcasts = Podcast.search(params)
     end
