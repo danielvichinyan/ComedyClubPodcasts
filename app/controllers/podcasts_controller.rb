@@ -4,12 +4,21 @@ class PodcastsController < ApplicationController
   # GET /podcasts
   # GET /podcasts.json
   def index
-    @podcasts = Podcast.all
+    # Order in ascending order
+    @podcasts = Podcast.all.order("created_at DESC")
   end
 
   # GET /podcasts/1
   # GET /podcasts/1.json
   def show
+  end
+
+  def search
+    if params[:search].blank?
+      @podcasts = Podcast.all.order("created_at DESC")
+    else
+      @podcasts = Podcast.search(params)
+    end
   end
 
   # GET /podcasts/new

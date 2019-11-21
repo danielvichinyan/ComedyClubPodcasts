@@ -12,4 +12,10 @@ class Podcast < ApplicationRecord
   has_attached_file :video, :styles => { :medium => {:geometry => "640x480", :format => 'mp4'}, :thumb => {:geometry => "100x50", :format => 'jpg', :time => 10} }, :processor => [:transcoder]
 
   validates_attachment_content_type :video, content_type: /\Avideo\/.*\z/
+
+  # Search podcasts
+  def self.search(params)
+    podcasts = Podcast.where("title LIKE ? or description LIKE ?", "%#{params[:search]}%", "%#{params[:search]}%") if params[:search].present?
+    podcasts
+  end
 end
