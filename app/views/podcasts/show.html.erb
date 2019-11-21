@@ -1,8 +1,6 @@
 <section class="container">
   <div class="row">
     <div class="col-md-12" style="margin-top:5rem">
-      <p id="notice"><%= notice %></p>
-
       <div class="btn_holder"><br>
         <p>
           <!-- If an episode is created with an image, display it -->
@@ -45,8 +43,10 @@
         </p>
       </div>
 
-      <div class="btn_holder"><br>
-        <%= link_to 'Edit', edit_podcast_path(@podcast) %> |
-        <%= link_to 'Back', podcasts_path %>
+      <div class="btn_holder"><br><br>
+        <div class="btn-group">
+          <%= button_to 'Edit', edit_podcast_path(@podcast), :method => :get, class: "btn btn_highlight", style: "margin-right: 7rem" %>
+          <%= button_to 'Delete', @podcast, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn_dark' %>
+        </div>
       </div>
 </section>

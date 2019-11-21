@@ -50,6 +50,7 @@ body {
 
 .btn_highlight {
   background: $highlight;
+  color: $black;
   transition: background 0.4s ease-in-out;
 
   &:hover {

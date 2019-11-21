@@ -5,9 +5,15 @@
     <%= link_to 'Comedy Club', root_path, class:'navbar-brand' %>
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <%= link_to 'Podcasts', root_path, class:'nav-link' %>
-      </li>
+      <% unless user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to 'Podcasts', root_path, class:'nav-link' %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to 'Create a podcast', new_podcast_path, class:'nav-link' %>
+        </li>
+      <% end %>
     </ul>
 
     <ul class="navbar-nav">
