@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  root 'podcasts#index'
+  # Making home page the root page
+  root 'home#index'
+
   resources :podcasts do
     collection do
       # Search route
