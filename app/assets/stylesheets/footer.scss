@@ -12,12 +12,11 @@
   -webkit-transition-border: border 0.2s ease;
   transition: border 0.2s ease;
   color: #aaaaaa;
-}
-
-.footer a:hover {
-  text-decoration: none;
-  color: $highlight !important;
-  border-bottom: 0.5px solid $highlight;
+  &:hover {
+    text-decoration: none;
+    color: $highlight !important;
+    border-bottom: 0.5px solid $highlight;
+  }
 }
 
 .border_bottom {

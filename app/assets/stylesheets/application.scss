@@ -169,3 +169,11 @@ h6 {
 .cf:after {
   clear: both;
 }
+
+/**
+* Wrap image left to text.
+*/
+.p-left {
+  float: left;
+  margin: 0px 15px 15px 0px;
+}

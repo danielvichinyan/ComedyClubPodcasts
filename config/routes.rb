@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   # Making home page the root page
   root 'home#index'
 
+  get 'home/about', to: 'home#about'
+
   resources :podcasts do
     collection do
       # Search route

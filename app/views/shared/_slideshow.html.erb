@@ -12,7 +12,7 @@
           <h1>Welcome to Comedy Club Sofia!</h1>
           <p>We are the first and only comedy club in Bulgaria!</p>
           <p>Join us in our journey!</p>
-          <p><%= button_to 'Create Account', new_user_registration_path, class:'btn btn_highlight' %></p>
+          <p><%= link_to 'Register', new_user_registration_path, class:'btn btn_highlight' %></p>
         </div>
       </div>
     </div>
@@ -22,7 +22,7 @@
         <div class="carousel-caption d-none d-md-block text-right">
           <h1>Who are we?</h1>
           <p>Get to know us better.</p>
-          <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+          <p><%= link_to 'About', home_about_path, class:'btn btn_highlight' %></p>
         </div>
       </div>
     </div>
