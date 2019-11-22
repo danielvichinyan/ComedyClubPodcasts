@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   get 'home/about', to: 'home#about'
-
+  get 'home/comedians', to: 'home#comedians'
   resources :podcasts do
     collection do
       # Search route
