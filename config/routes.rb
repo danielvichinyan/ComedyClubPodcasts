@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   root 'home#index'
 
   get 'home/about', to: 'home#about'
+  get 'home/contact', to: 'home#contact'
+  post 'request_contact', to: 'home#request_contact'
   get 'home/comedians', to: 'home#comedians'
   resources :podcasts do
     collection do
