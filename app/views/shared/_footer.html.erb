@@ -3,15 +3,36 @@
     <div class="row">
       <div class="col-md-4">
         <h5><%= link_to 'Comedy Club', root_path, class:'navbar-brand' %></h5>
-        <h6><%= link_to 'Comedians', home_comedians_path, class:'a' %></h6>
         <h6>Gallery</h6>
-        <h6>Locations</h6>
+        <h6><%= link_to 'Comedians', home_comedians_path, class:'a' %></h6>
+        <h6><%= link_to 'Contact Us', home_contact_path, class:'a' %></h6>
+        <h6><%= link_to 'About', home_about_path, class:'a' %></h6>
+
       </div><!-- col-md-4 -->
 
       <div class="col-md-4">
-        <h5>Contacts</h5>
-        <h6><%= link_to 'Contact Us', home_contact_path, class:'a' %></h6>
-        <h6><%= link_to 'About', home_about_path, class:'a' %></h6>
+        <h5>Address</h5>
+        <p id="map" </p>
+          <script>
+            // Initialize and add the map
+            function initMap() {
+              // The location of Uluru
+              var uluru = {lat: 51.241920, lng: -0.585900};
+              // The map, centered at Uluru
+              var map = new google.maps.Map(
+                document.getElementById('map'), {zoom: 15, center: uluru});
+                // The marker, positioned at Uluru
+              var marker = new google.maps.Marker({position: uluru, map: map});
+            }
+          </script>
+      <!--Load the API from the specified URL
+      * The async attribute allows the browser to render the page while the API loads
+      * The key parameter will contain your own API key (which is not needed for this tutorial)
+      * The callback parameter executes the initMap() function
+      -->
+      <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAq96yv3MIDUWM26cc_GWtRdfZU1KQpR3c&callback=initMap">
+      </script>
       </div><!-- col-md-4 -->
 
       <div class="col-md-4">
