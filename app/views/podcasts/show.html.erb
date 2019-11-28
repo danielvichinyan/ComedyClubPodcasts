@@ -7,7 +7,7 @@
           <% if @podcast.banner.present? %>
             <%= image_tag (@podcast.banner.url(:medium)), class:"episode_thumbnail" %>
           <% else %>
-          <!-- Else, display the NoImage image.-->
+            <!-- Else, display the NoImage image.-->
             <%= image_tag "noimage.jpg", class: "episode_thumbnail" %>
           <% end %>
         </p>
@@ -49,4 +49,21 @@
           <%= button_to 'Delete', @podcast, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn_dark' %>
         </div>
       </div>
-</section>
+
+      <div class="txt_left">
+        <!-- Comments Partial -->
+        <%= render 'comments/comment' %>
+        <!-- Form Partial -->
+        <!-- If user is logged in -->
+        <% if current_user %>
+          <%= render 'comments/form' %>
+          <!-- If user is not logged or signed in -->
+        <% else %>
+          Please
+          <%= link_to 'Sign In', new_user_session_path %>
+          or
+          <%= link_to 'Sign Up', new_user_registration_path %>
+          to add a comment.
+        <% end %>
+      </div>
+    </section>

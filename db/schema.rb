@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_20_200352) do
+ActiveRecord::Schema.define(version: 2019_11_27_171632) do
+
+  create_table "comments", force: :cascade do |t|
+    t.string "user_email"
+    t.text "content"
+    t.integer "podcast_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["podcast_id"], name: "index_comments_on_podcast_id"
+  end
 
   create_table "podcasts", force: :cascade do |t|
     t.string "title"

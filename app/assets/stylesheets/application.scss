@@ -23,7 +23,8 @@ $light: #EDEFF5;
 
 body {
   font-family: 'Open Sans', sans-serif;
-  min-height: 75rem;
+  margin: 0;
+  padding: 0;
   padding-top: 3.5rem;
 }
 
@@ -32,10 +33,6 @@ body {
   padding: 0.55rem 1rem;
   border-radius: 1.5rem;
   min-width: 6.5rem;
-}
-
-.btn_holder {
-  text-align: center;
 }
 
 .btn_highlight {
@@ -59,12 +56,15 @@ body {
   }
 }
 
+.btn_holder {
+  text-align: center;
+}
+
 #notice_wrapper {
   width: 100%;
   position: absolute;
   background: rgba(208,103,82, 0.85);
   z-index: 999;
-
   p {
     color: $white;
     text-align: center;
