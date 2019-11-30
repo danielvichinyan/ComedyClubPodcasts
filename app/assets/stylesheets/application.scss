@@ -16,6 +16,7 @@
 @import "footer";
 @import "navigation";
 @import "carousel";
+@import "comments";
 $black: #000000;
 $white: #FFFFFF;
 $highlight: #D2674E;
@@ -56,8 +57,18 @@ body {
   }
 }
 
+/**
+* Align buttons/texts to center.
+*/
 .btn_holder {
   text-align: center;
+}
+
+/**
+* Remove dots/numbers from lists.
+*/
+li {
+    list-style-type: none;
 }
 
 #notice_wrapper {

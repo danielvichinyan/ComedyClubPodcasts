@@ -1,14 +1,15 @@
 class CommentsController < ApplicationController
-
+  load_and_authorize_resource
   def create
     @podcast = Podcast.find(params[:podcast_id])
     @comment = @podcast.comments.create(comment_params)
+    @comment.user_id = current_user.id
     if @comment.save
       redirect_to podcast_path(@podcast), notice:
       "You successfully created a comment."
     else
       redirect_to podcast_path(@podcast), alert:
-      "Comment could not be created. Minimum of 3 characters for Commenter and Body."
+      "Comment could not be created."
     end
   end
 
@@ -22,6 +23,6 @@ class CommentsController < ApplicationController
 
   private
   def comment_params
-    params.require(:comment).permit(:user_email, :content)
+    params.require(:comment).permit(:content)
   end
 end

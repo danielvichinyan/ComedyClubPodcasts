@@ -1,18 +1,10 @@
-<div class="btn_holder" style="margin-top:10rem">
-  <h2>Add Comment</h2>
-  <%= form_for([@podcast, @podcast.comments.build]) do |f| %>
-  <p>
-    <%= f.label :user_email %><br>
-    <%= f.text_field :user_email, style: "width:100%" %>
-  </p>
+<%= form_for([@podcast, @podcast.comments.new]) do |f| %>
 
-  <p>
-    <%= f.label :content %><br>
-    <%= f.text_area :content, style: "width:100%" %>
-  </p>
-
-  <p>
-    <%= f.submit "Comment", class:"btn btn_highlight" %>
-  </p>
-  <% end %>
+<div>
+  <%= f.text_area :content, rows: 2, cols: 60, placeholder: "Write a comment..." %>
 </div>
+
+<div class="btn-holder">
+  <%= f.submit "Comment", class:"btn btn_highlight" %>
+</div>
+<% end %>

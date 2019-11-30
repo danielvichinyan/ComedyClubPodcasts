@@ -45,20 +45,28 @@
 
       <div class="btn_holder"><br><br>
         <div class="btn-group">
-          <%= button_to 'Edit', edit_podcast_path(@podcast), :method => :get, class: "btn btn_highlight", style: "margin-right: 7rem" %>
-          <%= button_to 'Delete', @podcast, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn_dark' %>
+          <% if can? :update, @podcast %><%= button_to 'Edit', edit_podcast_path(@podcast), :method => :get, class: "btn btn_highlight", style: "margin-right: 7rem" %>
+          <% end %>
+          <% if can? :destroy, @podcast %><%= button_to 'Delete', @podcast, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn_dark' %>
+          <% end %>
         </div>
       </div>
 
-      <div class="txt_left">
-        <!-- Comments Partial -->
+      <h3 style="margin-top:8rem">Comments</h3>
+      <!-- Comments Partial -->
+      <div>
         <%= render 'comments/comment' %>
-        <!-- Form Partial -->
-        <!-- If user is logged in -->
-        <% if current_user %>
-          <%= render 'comments/form' %>
-          <!-- If user is not logged or signed in -->
-        <% else %>
+      </div>
+
+      <!-- Form Partial -->
+      <!-- If user is logged in -->
+      <% if current_user %>
+      <div>
+        <%= render 'comments/form' %>
+      </div>
+        <!-- If user is not logged or signed in -->
+      <% else %>
+        <div class="btn_holder">
           Please
           <%= link_to 'Sign In', new_user_session_path %>
           or
@@ -66,4 +74,6 @@
           to add a comment.
         <% end %>
       </div>
-    </section>
+    </div>
+  </div>
+</section>

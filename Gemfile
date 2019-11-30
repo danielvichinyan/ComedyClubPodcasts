@@ -44,7 +44,7 @@ gem 'aws-sdk-s3', '~> 1.56'
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'will_paginate', '~> 3.2', '>= 3.2.1'
 gem 'rails-controller-testing', '~> 1.0', '>= 1.0.4'
-
+gem 'cancancan', '~> 3.0', '>= 3.0.1'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

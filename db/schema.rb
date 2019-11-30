@@ -10,14 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_27_171632) do
+ActiveRecord::Schema.define(version: 2019_11_30_161451) do
 
   create_table "comments", force: :cascade do |t|
     t.string "user_email"
     t.text "content"
-    t.integer "podcast_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "podcast_id"
+    t.integer "user_id"
     t.index ["podcast_id"], name: "index_comments_on_podcast_id"
   end
 
@@ -38,6 +39,7 @@ ActiveRecord::Schema.define(version: 2019_11_27_171632) do
     t.string "audio_content_type"
     t.bigint "audio_file_size"
     t.datetime "audio_updated_at"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -48,6 +50,7 @@ ActiveRecord::Schema.define(version: 2019_11_27_171632) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -1,37 +1,18 @@
-<div class="btn_holder" style="margin-top:10rem">
-  <h2>
-    Comments
-  </h2>
-  <table class="table table-hover table-striped table-responsive-xs table-dark">
-    <thead>
-      <tr>
-        <th>User</th>
-        <th>Date</th>
-        <th>Text</th>
-        <th colspan="3">Editing Options</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @podcast.comments.each do |comment| %>
-        <tr>
-          <td>
-            <%= comment.user_email %>
-          </td>
+<div style="margin-top:2rem">
 
-          <td>
-            <!-- Displays at what time was the comment created. -->
-            <%= comment.created_at.strftime('%a %-b %-d, %Y at %l:%M %P') %>
-          </td>
-
-          <td>
-            <%= comment.content %>
-          </td>
-
-          <td>
-            <%= link_to 'Delete Comment', [comment.podcast, comment], class: 'btn btn_highlight', method: :Delete, data: {confirm: 'Are you sure?'} %>
-          </td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
-      </div>
+  <% @podcast.comments.each do |comment| %>
+    <fieldset>
+      <ol>
+        <li>
+          <%= comment.user_id %>
+          <!-- Displays at what time was the comment created. -->
+          <%= comment.created_at.strftime('%a %-b %-d, %Y at %l:%M %P') %><br />
+          <%= comment.content %>
+          <!-- User can delete only the comments he made. -->
+          <% if can? :destroy, comment %><%= link_to 'Delete Comment', [comment.podcast, comment], method: :Delete, data: {confirm: 'Are you sure?'} %>
+          <% end %>
+        </li>
+      </ol>
+    </fieldset>
+  </div>
+<% end %>

@@ -1,4 +1,5 @@
 class PodcastsController < ApplicationController
+  load_and_authorize_resource
   before_action :set_podcast, only: [:show, :edit, :update, :destroy]
 
   # GET /podcasts
@@ -34,7 +35,7 @@ class PodcastsController < ApplicationController
   # POST /podcasts.json
   def create
     @podcast = Podcast.new(podcast_params)
-
+    @podcast.user_id = current_user.id
     respond_to do |format|
       if @podcast.save
         format.html { redirect_to @podcast, notice: 'Podcast was successfully created.' }

@@ -4,7 +4,6 @@ class CreateComments < ActiveRecord::Migration[5.2]
       t.string :user_email
       t.text :content
       t.references :podcast, foreign_key: true
-
       t.timestamps
     end
   end
