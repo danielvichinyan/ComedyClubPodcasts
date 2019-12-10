@@ -1,8 +1,12 @@
 require 'test_helper'
 
 class PodcastsControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
   setup do
     @podcast = podcasts(:one)
+    @user = users(:one)
+    @user.save
+    sign_in @user
   end
 
   test "should get index" do
@@ -17,7 +21,7 @@ class PodcastsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create podcast" do
     assert_difference('Podcast.count') do
-      post podcasts_url, params: { podcast: { description: @podcast.description, title: @podcast.title } }
+      post podcasts_url, params: { podcast: { description: @podcast.description, title: @podcast.title, user_id: @user.id } }
     end
 
     assert_redirected_to podcast_url(Podcast.last)

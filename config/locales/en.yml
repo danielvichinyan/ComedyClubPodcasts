@@ -38,8 +38,14 @@ en:
       title: Comedy Club Podcasts
       welcome: Welcome to our website!
 
+    about:
+      title: Who are we?
+
+    comedians:
+      title: Our Comedians.
+
     contact:
-      title: Contact Us
+      title: Contact Us.
       contact_us: Complete the following form to get in touch with us.
 
       name: "Name:"
