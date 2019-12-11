@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'home/contact', to: 'home#contact'
   post 'request_contact', to: 'home#request_contact'
   get 'home/comedians', to: 'home#comedians'
-
+  
   resources :podcasts do
     resources :comments
     collection do

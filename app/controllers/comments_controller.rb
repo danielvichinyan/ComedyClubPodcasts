@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   load_and_authorize_resource
+
   def create
     @podcast = Podcast.find(params[:podcast_id])
     @comment = @podcast.comments.create(comment_params)
@@ -14,11 +15,11 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-  @podcast = Podcast.find(params[:podcast_id])
-  @comment = @podcast.comments.find(params[:id])
-  @comment.destroy
-  # After we deleted the comment, redirect to the particular podcast page we are deleting the comment from
-  redirect_to podcast_path(@podcast)
+    @podcast = Podcast.find(params[:podcast_id])
+    @comment = @podcast.comments.find(params[:id])
+    @comment.destroy
+    # After we deleted the comment, redirect to the particular podcast page we are deleting the comment from
+    redirect_to podcast_path(@podcast)
   end
 
   private
