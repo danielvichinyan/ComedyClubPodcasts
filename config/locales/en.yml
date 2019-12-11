@@ -36,7 +36,7 @@ en:
   home:
     home:
       title: Comedy Club Podcasts
-      welcome: Welcome to our website!
+      welcome: Welcome to Comedy Club Sofia!
 
     about:
       title: Who are we?
@@ -61,3 +61,37 @@ en:
     request_contact:
       no_email: You must supply an email address
       email_sent: Thank you. We will be in touch shortly.
+
+  podcasts:
+    index:
+      title: Podcasts
+
+    new:
+      title: Create a Podcast.
+
+    search:
+      title: Search Results
+
+    edit:
+      title: Edit Podcast
+
+    comments:
+      title: Comments
+
+  user:
+    sign_in:
+      title: Sign In
+
+    sign_up:
+      title: Sign Up
+
+  footer:
+    address: Address
+    follow_us: Follows Us
+
+  carousel:
+    welcome: Welcome to Comedy Club Sofia!
+    join_us: Join us in our journey!
+    who_are_we: Who are we?
+    people_behind_sucess: People behind our success.
+    shows: What is it to be at one of our shows?

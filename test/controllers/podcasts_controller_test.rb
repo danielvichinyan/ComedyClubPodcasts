@@ -12,11 +12,15 @@ class PodcastsControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
     get podcasts_url
     assert_response :success
+
+    assert_select 'h2', 'Podcasts'
   end
 
   test "should get new" do
     get new_podcast_url
     assert_response :success
+
+    assert_select 'h1', 'Create a Podcast.'
   end
 
   test "should create podcast" do

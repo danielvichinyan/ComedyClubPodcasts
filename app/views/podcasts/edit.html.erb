@@ -1,7 +1,9 @@
 <section class="container">
   <div class="row">
     <div class="col-md-12" style="margin-top:5rem">
-      <h1>Editing Podcast</h1>
+      <div class="btn_holder">
+        <h1><%= t('podcasts.edit.title') %></h1>
+      </div>
     </div>
   </div>
       <%= render 'form', podcast: @podcast %>

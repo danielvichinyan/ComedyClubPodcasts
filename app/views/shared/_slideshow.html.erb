@@ -10,9 +10,9 @@
       <%= image_tag "comedyClubSofia.jpg" %>
       <div class="container">
         <div class="carousel-caption d-none d-md-block text-left">
-          <h1>Welcome to Comedy Club Sofia!</h1>
+          <h1><%= t('carousel.welcome') %></h1>
           <p>We are the first and only comedy club in Bulgaria!</p>
-          <p>Join us in our journey!</p>
+          <p><%= t('carousel.join_us') %></p>
           <p><%= link_to 'Register', new_user_registration_path, class:'btn btn_highlight' %></p>
         </div>
       </div>
@@ -21,7 +21,7 @@
       <%= image_tag "ComedyClubSofiaTwo.jpg" %>
       <div class="container">
         <div class="carousel-caption d-none d-md-block text-right">
-          <h1>Who are we?</h1>
+          <h1><%= t('carousel.who_are_we') %></h1>
           <p>Get to know us better.</p>
           <p><%= link_to 'About', home_about_path, class:'btn btn_highlight' %></p>
         </div>
@@ -31,7 +31,7 @@
       <%= image_tag "actorsAll.jpg" %>
       <div class="container">
         <div class="carousel-caption d-none d-md-block text-right">
-          <h1>People behind our success.</h1>
+          <h1><%= t('carousel.people_behind_success') %></h1>
           <p>Meet our comedians.</p>
           <p><%= link_to 'Comedians', home_comedians_path, class:'btn btn_highlight' %></p>
         </div>
@@ -41,7 +41,7 @@
       <%= image_tag "ComedyClubSofiaFour.jpg" %>
       <div class="container">
         <div class="carousel-caption d-none d-md-block text-right">
-          <h1>What is it to be at one of our shows?</h1>
+          <h1><%= t('carousel.shows') %></h1>
           <p>Check photos from previous shows.</p>
           <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
         </div>
