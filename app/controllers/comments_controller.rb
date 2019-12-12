@@ -7,23 +7,27 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
     if @comment.save
       redirect_to podcast_path(@podcast), notice:
-      "You successfully created a comment."
+      I18n.t('podcasts.comments.create_success')
     else
       redirect_to podcast_path(@podcast), alert:
-      "Comment could not be created."
+      I18n.t('podcasts.comments.create_fail')
     end
   end
 
   def destroy
     @podcast = Podcast.find(params[:podcast_id])
     @comment = @podcast.comments.find(params[:id])
-    @comment.destroy
-    # After we deleted the comment, redirect to the particular podcast page we are deleting the comment from
-    redirect_to podcast_path(@podcast)
+    if @comment.destroy
+      redirect_to podcast_path(@podcast), notice:
+      I18n.t('podcasts.comments.delete_success')
+    else
+      redirect_to podcast_path(@podcast), alert:
+      I18n.t('podcasts.comments.delete_fail')
+    end
   end
 
   private
   def comment_params
-    params.require(:comment).permit(:content)
+    params.require(:comment).permit(:content, :podcast_id, :user_id)
   end
 end

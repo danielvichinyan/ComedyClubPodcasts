@@ -68,15 +68,22 @@ en:
 
     new:
       title: Create a Podcast.
+      create_success: Podcast was successfully created.
 
     search:
       title: Search Results
 
     edit:
       title: Edit Podcast
+      update_success: Podcast was successfully updated.
+      delete_success: Podcast was successfully deleted.
 
     comments:
       title: Comments
+      create_success: Your comment was successfully posted.
+      create_fail: Your comment should be minimum of 3 characters!
+      delete_success: Your comment was successfully deleted.
+      delete_fail: Your comment could not be deleted!
 
   user:
     sign_in:

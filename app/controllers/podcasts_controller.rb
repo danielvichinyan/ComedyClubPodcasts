@@ -38,7 +38,7 @@ class PodcastsController < ApplicationController
     @podcast.user_id = current_user.id
     respond_to do |format|
       if @podcast.save
-        format.html { redirect_to @podcast, notice: 'Podcast was successfully created.' }
+        format.html { redirect_to @podcast, notice: I18n.t('podcasts.new.create_success') }
         format.json { render :show, status: :created, location: @podcast }
       else
         format.html { render :new }
@@ -52,7 +52,7 @@ class PodcastsController < ApplicationController
   def update
     respond_to do |format|
       if @podcast.update(podcast_params)
-        format.html { redirect_to @podcast, notice: 'Podcast was successfully updated.' }
+        format.html { redirect_to @podcast, notice: I18n.t('podcasts.edit.update_success') }
         format.json { render :show, status: :ok, location: @podcast }
       else
         format.html { render :edit }
@@ -66,7 +66,7 @@ class PodcastsController < ApplicationController
   def destroy
     @podcast.destroy
     respond_to do |format|
-      format.html { redirect_to podcasts_url, notice: 'Podcast was successfully destroyed.' }
+      format.html { redirect_to podcasts_url, notice: I18n.t('podcasts.edit.delete_success') }
       format.json { head :no_content }
     end
   end
