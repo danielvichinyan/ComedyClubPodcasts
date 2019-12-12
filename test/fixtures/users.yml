@@ -5,13 +5,16 @@
 # below each fixture, per the syntax in the comments below
 #
 one:
+  username: testusername
   email: test1@test.com
   encrypted_password: nothing
 
 two:
+  username: testusername
   email: test2@test.com
   encrypted_password: nothing
 
 testUser:
+  username: testusername
   email: testt@test.com
   encrypted_password: nothing
