@@ -15,7 +15,7 @@ class Podcast < ApplicationRecord
 
   validates_attachment_content_type :video, content_type: /\Avideo\/.*\z/
 
-  validates :title, :presence => true, :uniqueness => {:case_sensitive => false}
+  validates :title, :presence => true, length: {minimum: 3}
   validates :description, :presence => true, length: {minimum: 3}
   # Search podcasts
   def self.search(params)

@@ -18,6 +18,18 @@ class CommentTest < ActiveSupport::TestCase
     assert comment.valid?
   end
 
+  test "should not save comment with small content" do
+    comment = Comment.new
+
+    comment.user_email = "bob@example.com"
+    comment.content = "Ye"
+    comment.user = @user
+    comment.podcast = @podcast
+
+    comment.save
+    refute comment.valid?
+  end
+
   test "should not save invalid comment" do
     comment = Comment.new
     comment.save

@@ -1,11 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user: one
   title: MyString
   description: MyText
+  banner_file_name: testBanner
+  audio_file_name: testAudio
+  video_file_name: testVideo
+  user_id: 1
+  user: one
 
 two:
-  user: two
   title: MyStringTwo
   description: MyText
+  banner_file_name: testBannerTwo
+  audio_file_name: testAudioTwo
+  video_file_name: testVideoTwo
+  user_id: 2
+  user: two

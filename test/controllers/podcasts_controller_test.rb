@@ -25,7 +25,7 @@ class PodcastsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create podcast" do
     assert_difference('Podcast.count') do
-      post podcasts_url, params: { podcast: { description: @podcast.description, title: @podcast.title, user_id: @user.id } }
+      post podcasts_url, params: { podcast: { description: @podcast.description, title: @podcast.title } }
     end
 
     assert_redirected_to podcast_url(Podcast.last)
