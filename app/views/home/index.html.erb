@@ -4,9 +4,30 @@
     <div class="col-md-12" style="margin-top:3rem">
       <div class="btn_holder">
         <h2><%= t('home.home.welcome') %></h2>
-        <p>Entertaining people and having fun is our first priority!
-           Join us in our jorney - watch our online podcasts, or be
-           our guest on one of our shows in every city in the country!</p>
+        <div class="mobile_visible btn_holder">
+          <%= image_tag "comedyClubSofia.jpg", style:"width:100%; border-radius: 4px;" %>
+        </div><br>
+        <p>Entertaining people and having fun is our first priority! Join us in our jorney - watch our online podcasts, or be our guest on one of our shows in every city in the country!</p>
+      </div>
+
+      <div class="mobile_visible btn_holder">
+        <p>What are you waiting for? Join Us!</p>
+
+        <div class="mobile_visible btn_holder">
+          <%= link_to 'Sign Up', new_user_registration_path, class:'btn btn_highlight' %>
+        </div><br><br><br>
+
+        <h3>The people behind our success.</h3>
+        <h4>Our comedians.</h4>
+
+        <p><%= image_tag "actorsAll.jpg", style:"width:100%; border-radius: 4px;" %></p>
+        <p><%= link_to 'Comedians', home_comedians_path, class:'btn btn_highlight' %></p><br><br>
+
+        <h3>Who are we?</h3>
+        <h4>Get to know us better.</h4>
+
+        <p><%= image_tag "ComedyClubSofiaTwo.jpg", style:"width:100%; border-radius: 4px;" %></p>
+        <p><%= link_to 'About', home_about_path, class:'btn btn_highlight' %></p>
       </div>
     </div>
   </div>

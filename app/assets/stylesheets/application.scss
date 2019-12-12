@@ -104,6 +104,7 @@ h6 {
 
 .floatr {
   float: right;
+  text-align: right;
 }
 
 .top-margin {
@@ -194,5 +195,20 @@ h6 {
   ul {
     list-style: none;
     margin: 0 0 18px 0;
+  }
+}
+
+.carousel-inner img {
+  margin: auto;
+  width: 100%;
+}
+
+
+@media screen and (min-width: 760px) {
+  .mobile_visible {
+    visibility: visible;
+    clear: both;
+    text-align: center;
+    display: none;
   }
 }

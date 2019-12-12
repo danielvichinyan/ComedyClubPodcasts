@@ -4,7 +4,7 @@
     <fieldset>
       <ol>
         <li>
-          <%= comment.user_id %>
+          <%= current_user.username %>
           <!-- Displays at what time was the comment created. -->
           <%= comment.created_at.strftime('%a %-b %-d, %Y at %l:%M %P') %><br />
           <%= comment.content %>

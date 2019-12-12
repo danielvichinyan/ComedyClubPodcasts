@@ -6,6 +6,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates_presence_of :email, :password, :password_confirmation
+  validates_presence_of :username, :email, :password, :password_confirmation
 
 end
